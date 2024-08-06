@@ -1,0 +1,53 @@
+http://192.168.1.253:2024/360/register [post, get, delete] 
+http://192.168.1.253:2024/360/register/<id> [get, put, delete]
+key = username, password, email
+
+http://192.168.1.253:2024/360/login [post]
+key = username, password 
+
+http://192.168.1.253:2024/360/profile [post, get, delete]
+http://192.168.1.253:2024/360/profile/<id> [get, put, delete]
+key : username, name, bio, domain
+note : "name" is username in string based on account
+
+http://192.168.1.253:2024/360/list [post, get, delete]
+http://192.168.1.253:2024/360/list/<id> [get, put, delete]
+key : title, url, id_profile, status
+note : 'id_profile' is id in integer format based on profile 
+
+http://192.168.1.253:2024/360/category [post, get, delete]
+http://192.168.1.253:2024/360/category/<id> [get, put, delete]
+key : name
+
+http://192.168.1.253:2024/360/client [post, get, delete]
+http://192.168.1.253:2024/360/client/<id> [get, put, delete]
+key : name, email, phone, position, company, logo[file]
+
+http://192.168.1.253:2024/360/project [post, get, delete]
+http://192.168.1.253:2024/360/project/<id> [get, put, delete]
+key : name, domain, rating, testimoni, review, cinematic, address, link_gmaps, instagram, category, client
+note : 'category' is name in string based on category name
+       'client' is name in string based on client name
+
+relation api
+
+http://192.168.1.253:2024/360/profile/all/<id> [get]
+note : get profile with link for linktree
+
+http://192.168.1.253:2024/360/category/all [get]
+http://192.168.1.253:2024/360/category/all/<id> [get]
+note : get client and project based on category
+
+http://192.168.1.253:2024/360/client/all [get]
+http://192.168.1.253:2024/360/client/all/<id> [get]
+note : get category and project based on client
+
+http://192.168.1.253:2024/360/project/all [get]
+http://192.168.1.253:2024/360/project/all/<id> [get]
+note : get client and category based on project
+
+http://192.168.1.253:2024/360/forgot-password [post]
+key : username
+
+http://192.168.1.253:2024/360/reset-password/<tokenreset> [post]
+key : password
